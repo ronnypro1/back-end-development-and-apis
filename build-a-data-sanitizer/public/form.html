@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Sanitizer</title>
+</head>
+<body>
+  <h1>Submission Form</h1>
+  <p id="error"></p>
+  <form action="/submit" method="POST">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <label for="comment">Comment</label>
+    <textarea id="comment" name="comment"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    const error = new URLSearchParams(window.location.search).get('error');
+    if (error) document.getElementById('error').textContent = error;
+  </script>
+</body>
+</html>
